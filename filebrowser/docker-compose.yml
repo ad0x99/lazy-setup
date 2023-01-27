@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    user: ${your_uid}:${your_gid}
+    ports:
+      - 8080:8080
+    volumes:
+      - ~/docker:/srv
+      - ~/docker/filebrowser/filebrowser.db:/database.db
+      - ~/docker/filebrowser/.filebrowser.json:/.filebrowser.json
+    restart: always
